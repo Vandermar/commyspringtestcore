@@ -11,6 +11,12 @@
     </bean>
 
     <bean id="eventLogger" class="com.myspring.test.core.loggers.ConsoleEventLogger" />
+
+    <bean id="fileEventLogger" class="com.myspring.test.core.loggers.FileEventLogger"
+          init-method="init">
+        <constructor-arg value="target/events_log.txt"/>
+    </bean>
+
     <bean id="event" class="com.myspring.test.core.beans.Event"  scope="prototype">
         <constructor-arg>
             <bean class="java.util.Date"/>
@@ -22,7 +28,7 @@
 
     <bean id="app" class="App">
         <constructor-arg ref="client" />
-        <constructor-arg ref="eventLogger" />
+        <constructor-arg ref="fileEventLogger" />
     </bean>
 
 </beans>
