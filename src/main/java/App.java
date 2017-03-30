@@ -1,7 +1,7 @@
 import com.myspring.test.core.beans.Client;
 import com.myspring.test.core.beans.Event;
 import com.myspring.test.core.loggers.EventLogger;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -24,14 +24,14 @@ public class App {
 
     public static void main(String[] args) {
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+        ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
         App app = (App) ctx.getBean("app");
         for (int i = 0; i < 10; i++) {
 
-            Event e=(Event) ctx.getBean("event");
-            e.setMsg("Show user: "+i);
+            Event e = (Event) ctx.getBean("event");
+            e.setMsg("Show user: " + i);
             app.logEvent(e);
         }
-
+        ctx.close();
     }
 }
