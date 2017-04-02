@@ -8,6 +8,6 @@ import com.myspring.test.core.beans.Event;
 public class ConsoleEventLogger implements EventLogger {
 
     public void logEvent(Event event){
-        System.out.println(event);
+        System.out.print(event);
     }
 }

@@ -1,5 +1,8 @@
 package com.myspring.test.core.beans;
 
+import com.oracle.javafx.jmx.json.JSONReader;
+import javafx.event.EventType;
+
 import javax.swing.text.DateFormatter;
 import java.text.DateFormat;
 import java.util.Date;
@@ -13,6 +16,8 @@ public class Event {
     private String msg;
     private Date date;
     private DateFormat df;
+
+
     public Event(Date date, DateFormat df){
         super();
         id=(int)Math.floor(Math.random()*1000)+5000;
@@ -26,7 +31,7 @@ public class Event {
                 "id=" + id +
                 ", msg='" + msg + '\'' +
                 ", date=" + df.format(date) +
-                '}';
+                "}\n";
     }
 
     public int getId() {
