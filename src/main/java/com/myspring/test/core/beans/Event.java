@@ -18,9 +18,9 @@ public class Event {
     private DateFormat df;
 
 
-    public Event(Date date, DateFormat df){
+    public Event(Date date, DateFormat df) {
         super();
-        id=(int)Math.floor(Math.random()*1000)+5000;
+        id = (int) Math.floor(Math.random() * 1000) + 5000;
         this.date = date;
         this.df = df;
     }
